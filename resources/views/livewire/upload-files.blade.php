@@ -1,7 +1,10 @@
 <div>
-    <p class="p-4">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto ipsam vero
-        voluptatibus tenetur magni reprehenderit numquam ducimus cumque in! Doloremque, porro nobis. Distinctio
-        labore nesciunt sit consequatur, perferendis delectus fugit!
-    </p>
+    <h3 class="text-lg py-2">Upload Excel File</h3>
+    <form action="{{ route('excel.import') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+            <input class="file-input file-input-bordered w-full max-w-xs" type="file" name="file">
+            <button type="submit" class="btn btn-neutral px-7 ml-5">Import</button>
+        </div>
+    </form>
 </div>
