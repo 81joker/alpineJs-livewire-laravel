@@ -10,30 +10,28 @@
     @livewireStyles
 
 </head>
-<body data-theme="cupcake">
+<body data-theme="cupcake font-normal">
     @include('layouts.navbar')
 
     <x-model name="modalOnce" title="modal1">
         {{-- @slot('body') --}}
         <x-slot:body>
-            <p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto ipsam vero
-                voluptatibus tenetur magni reprehenderit numquam ducimus cumque in! Doloremque, porro nobis. Distinctio
-                labore nesciunt sit consequatur, perferendis delectus fugit!</p>
+            <livewire:upload-files />
+           
             {{-- @endslot --}}
         </x-slot:body>
     </x-model>
 
     <x-model name="modalTwo" title="Modal2">
         @slot('body')
-            <p class="p-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto ipsam vero voluptatibus
-                tenetur magni reprehenderit numquam ducimus cumque in! Doloremque, porro nobis. Distinctio labore nesciunt
-                sit consequatur, perferendis delectus fugit!</p>
+         <livewire:show-files />
         @endslot
     </x-model>
 
 
 
-    <button x-data x-on:click="$dispatch('open-modal',{name: 'modalOnce'})"
+<div class="inset-0 bg-red-100 mt-10 m-auto">
+        <button x-data x-on:click="$dispatch('open-modal',{name: 'modalOnce'})"
         class="px-3 py-1 bg-red-500 text-white rounded ">
         Modal One
     </button>
@@ -41,6 +39,7 @@
         class="px-3 py-1 bg-red-500 text-white rounded">
         Modal Two
     </button>
+</div>
 
     @livewireScripts
 
