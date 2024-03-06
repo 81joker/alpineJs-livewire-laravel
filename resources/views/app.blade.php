@@ -41,8 +41,7 @@
     </button>
 </div>
 
-    @livewireScripts
-
+@livewireScripts
+{{-- @include('layouts.footer') --}}
 </body>
-
 </html>
