@@ -15,6 +15,24 @@
     @include('layouts.navbar')
     <div class="container mx-auto">
 
+      <x-success message="message"/>
+
+      
+            <div class="inset-0 bg-red-100 mt-10 m-auto">
+                <button x-data x-on:click="$dispatch('open-modal',{name: 'modalOnce'})"
+                    class="px-3 py-1 bg-red-500 text-white rounded ">
+                    Modal One
+                </button>
+                <button x-data x-on:click="$dispatch('open-modal',{name: 'modalTwo'})"
+                    class="px-3 py-1 bg-red-500 text-white rounded">
+                    Modal Two
+                </button>
+            </div>
+       {{-- Upload File --}}
+            <livewire:show-files />
+            {{-- /Upload File --}}
+
+
             {{-- Upload File --}}
             <livewire:upload-files />
             {{-- /Upload File --}}
@@ -22,7 +40,8 @@
             <x-model name="modalOnce" title="modal1">
                 {{-- @slot('body') --}}
                 <x-slot:body>
-                          <x-table :invoices="$invoices" />
+                {{-- <x-table :invoices="$invoices" /> --}}
+                            <livewire:show-files />
                     {{-- @endslot --}}
                 </x-slot:body>
             </x-model>
@@ -34,16 +53,6 @@
 
 
 
-            <div class="inset-0 bg-red-100 mt-10 m-auto">
-                <button x-data x-on:click="$dispatch('open-modal',{name: 'modalOnce'})"
-                    class="px-3 py-1 bg-red-500 text-white rounded ">
-                    Modal One
-                </button>
-                <button x-data x-on:click="$dispatch('open-modal',{name: 'modalTwo'})"
-                    class="px-3 py-1 bg-red-500 text-white rounded">
-                    Modal Two
-                </button>
-            </div>
 
         </div>
         @livewireScripts

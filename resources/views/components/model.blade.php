@@ -14,7 +14,7 @@
 
     >
 <div x-on:click="show = false" class="fixed z-50 inset-0">
-    <div class="fixed inset-0 bg-gray-300 opacity-75">
+    <div class="fixed inset-0 bg-gray-300 opacity-100">
         <div class="bg-white rounded m-auto fixed inset-0 max-w-2xl" style="max-height: 50vh;">
         @if (isset($title))
              <div class="py-5 flex items-center justify-center">
